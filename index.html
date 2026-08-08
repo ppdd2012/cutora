@@ -1,20 +1,236 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>我的主页</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>橙子抠图 Cutora — iOS 本地 AI 智能抠图</title>
+<link rel="icon" type="image/svg+xml" href="../../Cutora-AppIcon/cutora-icon-1024.svg">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    color: #1a1a1a;
+    background: #fafafa;
+    line-height: 1.6;
+}
+
+/* ── Header ── */
+header {
+    background: linear-gradient(135deg, #52AEF0 0%, #1A6FC4 100%);
+    color: #fff;
+    text-align: center;
+    padding: 64px 24px 56px;
+}
+header .app-icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    margin-bottom: 16px;
+}
+header h1 { font-size: 2.4em; font-weight: 700; letter-spacing: 0.02em; }
+header p { margin-top: 12px; font-size: 1.15em; opacity: 0.92; }
+header .badge {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 22px;
+    border: 2px solid rgba(255,255,255,0.7);
+    border-radius: 24px;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+/* ── Features ── */
+.features {
+    max-width: 860px;
+    margin: -32px auto 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+.feature-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    text-align: center;
+}
+.feature-card .icon { font-size: 2em; margin-bottom: 10px; }
+.feature-card h3 { font-size: 1.05em; font-weight: 600; margin-bottom: 6px; }
+.feature-card p { font-size: 0.88em; color: #666; }
+
+/* ── Section ── */
+section { max-width: 860px; margin: 48px auto; padding: 0 20px; }
+section h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #52AEF0;
+    display: inline-block;
+}
+
+/* ── Legal links ── */
+.legal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.legal-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+}
+.legal-card h3 {
+    font-size: 1.05em;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+}
+.legal-card a {
+    display: inline-block;
+    margin-right: 16px;
+    color: #1A6FC4;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+.legal-card a:hover { text-decoration: underline; }
+
+/* ── Tech ── */
+.tech-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+}
+.tech-box ul {
+    list-style: none;
+    padding: 0;
+}
+.tech-box li {
+    padding: 6px 0;
+    font-size: 0.95em;
+    color: #444;
+}
+.tech-box li::before {
+    content: "✓";
+    color: #1A6FC4;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+/* ── Footer ── */
+footer {
+    text-align: center;
+    padding: 40px 20px 48px;
+    color: #999;
+    font-size: 0.85em;
+}
+footer a { color: #1A6FC4; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+footer .links { margin-bottom: 12px; }
+footer .links a { margin: 0 10px; }
+
+@media (max-width: 600px) {
+    header { padding: 48px 16px 40px; }
+    header h1 { font-size: 1.8em; }
+    .legal-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
-    <nav>
-        <!-- 导航栏 -->
-        <a href="index.html">首页</a> |
-        <a href="Privacy_Policy_CN.html">隐私政策CN</a> |
-        <a href="Privacy_Policy_EN.html">隐私政策EN</a> |
-        <a href="Terms_of_Service_CN.html">用户协议CN</a> |
-		<a href="Terms_of_Service_EN.html">用户协议EN</a>
-    </nav>
 
-    <h1>欢迎来到首页</h1>
-    <p>这是主页面内容。</p>
+<header>
+    <img src="../../Cutora-AppIcon/cutora-icon-1024.svg" alt="Cutora" class="app-icon">
+    <h1>橙子抠图 Cutora</h1>
+    <p>iOS 本地 AI 智能抠图 · 纯设备端处理 · 隐私安全</p>
+    <div class="badge">App Store 免费下载</div>
+</header>
+
+<!-- Features -->
+<div class="features">
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="icon">✂️</div>
+            <h3>AI 智能抠图</h3>
+            <p>基于本地 AI 模型，一键精准提取人像、物品等主体</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🎨</div>
+            <h3>背景替换</h3>
+            <p>支持纯色、渐变、自定义图片等多种背景替换方案</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📸</div>
+            <h3>证件照制作</h3>
+            <p>内置多种证件照规格，智能裁剪一键生成</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📦</div>
+            <h3>批量处理</h3>
+            <p>支持多张图片批量抠图，高效省时</p>
+        </div>
+    </div>
+</div>
+
+<!-- Tech highlights -->
+<section>
+    <h2>技术亮点</h2>
+    <div class="tech-box">
+        <ul>
+            <li>所有图像处理均在设备本地完成，不上传任何数据到远程服务器</li>
+            <li>Core ML 驱动，支持设备智能分级与自动降级</li>
+            <li>Metal 后处理引擎，精细优化蒙版边缘</li>
+            <li>支持擦除/保留画笔手动精修，阴影与倒影效果</li>
+            <li>StoreKit 2 订阅制，免费基础功能 + 会员高级功能</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Legal documents -->
+<section>
+    <h2>法律条款</h2>
+    <div class="legal-grid">
+        <div class="legal-card">
+            <h3>隐私政策</h3>
+            <a href="privacy_cn.html">中文版</a>
+            <a href="privacy_en.html">English</a>
+        </div>
+        <div class="legal-card">
+            <h3>用户服务协议</h3>
+            <a href="service_cn.html">中文版</a>
+            <a href="service_en.html">English</a>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section>
+    <h2>联系我们</h2>
+    <div class="tech-box">
+        <ul>
+            <li>官方网站：https://cutora.cn</li>
+            <li>联系邮箱：ppdd2012@outlook.com</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <div class="links">
+        <a href="privacy_cn.html">隐私政策</a>
+        <a href="service_cn.html">用户协议</a>
+        <a href="privacy_en.html">Privacy Policy</a>
+        <a href="service_en.html">Terms of Service</a>
+    </div>
+    <p>&copy; 2026 Cutora. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
